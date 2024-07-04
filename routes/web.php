@@ -9,11 +9,9 @@ use App\Http\Controllers\Private\UserController;
 use App\Http\Controllers\Private\DashController;
 use App\Http\Controllers\Auth\LoginController;
 
-
 use App\Http\Controllers\Public\HomeControllerPublic;
 use App\Http\Controllers\Public\ProfileControllerPublic;
 use App\Http\Controllers\Public\ContactControllerPublic;
-// use App\Http\Controllers\private\UserController;
 
 Auth::routes();
 Route::middleware('auth')->group(function () {
@@ -28,14 +26,8 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 //Public area
 Route::middleware(['guest'])->group(function () {
-    Route::get('/', [HomeControllerPublic:: class, 'index'])->name('home');
-    Route::get('/profile', [ProfileControllerPublic:: class, 'index'])->name('profile');
-    Route::get('/contact', [ContactControllerPublic:: class, 'contact'])->name('contact');
-    Route::post('/contact/save', [ContactControllerPublic:: class, 'store'])->name('save');
-    });
-
-
-
-
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeControllerPublic:: class, 'index'])->name('home');
+Route::get('/profile', [ProfileControllerPublic:: class, 'index'])->name('profile');
+Route::get('/contact', [ContactControllerPublic:: class, 'contact'])->name('contact');
+Route::post('/contact/save', [ContactControllerPublic:: class, 'store'])->name('save');
+});
