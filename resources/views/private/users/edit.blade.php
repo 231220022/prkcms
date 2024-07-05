@@ -32,7 +32,7 @@
             <input type="email" class="form-control" id="email" name="email" value="{{ old('email', $user->email) }}" required>
         </div>
         <div class="form-group">
-            <label for="password">Password <small>(leave blank if not changing)</small></label>
+            <label for="password">Password <small>(biarkan kosong jika tidak ingin mengganti password)</small></label>
             <input type="password" class="form-control" id="password" name="password">
         </div>
         <div class="form-group">
